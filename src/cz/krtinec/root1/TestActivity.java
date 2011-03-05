@@ -16,13 +16,11 @@ public class TestActivity extends Activity {
     private static final int DIALOG_SHOW_CONTACT = 10;
     private static final int MENU_FIND_CONTACT = 1;
 
-    private Uri pickedContact;
+    private static Uri pickedContact;
 
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        //For dialog orientation change
-        pickedContact = (Uri) getLastNonConfigurationInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
     }
@@ -91,8 +89,4 @@ public class TestActivity extends Activity {
         }
     }
 
-    @Override
-    public Object onRetainNonConfigurationInstance() {
-        return pickedContact;
-    }
 }
